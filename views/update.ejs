@@ -1,0 +1,17 @@
+<%- include("partials/header")-%>
+    <!-- // as now we have shifted the files it the partials folder in the views -->
+
+    <h1>Edit Your Blog</h1>
+    <form method="post" action="/update/<%= blog._id%>">
+        <div class="form-group">
+            <label id="title">Edit Task</label>
+            <input class="form-control" type="text" placeholder="enter text" name="newtask" id="task" value=<%= blog.title%>>
+            <label id="textarea">Text</label>
+            <textarea class="form-control" id="textarea" name="taskbody" rows="4" cols="100"> <%= blog.description%></textarea>
+            <input type="date" id="dateInput" name="date" ></input>
+            <input type="text" name="status"  placeholder="done or Not done" value=<%= blog.status%> />
+        </div>
+        <button class="btn btn-primary" type="submit" name=" button">Submit Me</button>
+    </form>
+
+    <%- include("partials/footer")-%>
